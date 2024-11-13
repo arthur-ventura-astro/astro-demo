@@ -1,6 +1,6 @@
 from airflow.decorators import dag, task
 from pendulum import datetime
-from plugins.utils import * # todo: import it correctly
+from dags.utils.calculations import * # todo: import it correctly
 
 TASKS = len(batches)
 @dag(
