@@ -13,7 +13,7 @@ TASKS = len(batches)
 def rand1_dag():
 
     @task(
-        queue="easy-medium"
+        queue="medium"
     )
     def medium_computations(batch):
         print(f"Computing batch [{batch}]")

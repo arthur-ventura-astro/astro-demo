@@ -13,7 +13,7 @@ TASKS = len(batches)
 def rand4_dag():
 
     @task(
-        queue="hard-impossible"
+        queue="hard"
     )
     def hard_computations(batch):
         print(f"Computing batch [{batch}]")
