@@ -20,6 +20,6 @@ def rand5_dag():
         result = compute_factor(factor=1)
         print(result)
 
-    easy_computations.expand(batch=bathces)
+    easy_computations.expand(batch=batches)
 
 rand5_dag()
