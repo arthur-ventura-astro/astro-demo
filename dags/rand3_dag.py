@@ -12,7 +12,9 @@ TASKS = len(bathces)
 )
 def rand3_dag():
 
-    @task
+    @task(
+        queue="easy-medium"
+    )
     def medium_computations(batch):
         print(f"Computing batch [{batch}]")
         result = compute_factor()
