@@ -1,16 +1,15 @@
 from random import randint
 
 batches = [i for i in range(5)]
-bathces = [i for i in range(50)]
+bathces = [i for i in range(500)]
 
-def compute_factor(factor=2):
-    expected = "0" * factor
-
-    s, s_ = -1, 0
-    while not str(s).startswith(expected):
-        s = hash(randint(0, 10_000_000))
-        if str(s).startswith("0"):
-            print("Tries:", s_)
-        s_ += 1
+def compute_factor(factor=100):
+    c, i = 0, 0
+    while c < factor:
+        h = hash(randint(0, 10_000_000))
+        if str(h).startswith("0"):
+            print("Tries:", i)
+            c += 1
+        i += 1
 
     return "Computation Ended!"

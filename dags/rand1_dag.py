@@ -2,22 +2,22 @@ from airflow.decorators import dag, task
 from pendulum import datetime
 from plugins.utils import * # todo: import it correctly
 
-TASKS = len(bathces)
+TASKS = len(batches)
 @dag(
     start_date=datetime(2024, 11, 12),
-    schedule="*/15 * * * *",
+    schedule="0 * * * *",
     max_active_tasks=TASKS,
     catchup=False,
     tags=["Random", "Computations"]
 )
-def random_dag():
+def rand1_dag():
 
     @task
-    def hard_computations(batch):
+    def medium_computations(batch):
         print(f"Computing batch [{batch}]")
         result = compute_factor()
         print(result)
 
-    hard_computations.expand(batch=bathces)
+    medium_computations.expand(batch=batches)
 
-random_dag()
+rand1_dag()
