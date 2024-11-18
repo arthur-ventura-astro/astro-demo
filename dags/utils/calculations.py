@@ -1,7 +1,6 @@
 from random import randint
 
 batches = [i for i in range(5)]
-bathces = [i for i in range(500)]
 
 def compute_factor(factor=10):
     c, i = 0, 0

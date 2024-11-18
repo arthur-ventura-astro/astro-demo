@@ -6,20 +6,11 @@
 # For issues create an issue ticket here: https://github.com/astronomer/astro-cli/issues
 
 airflow:
-  connections:
-    - conn_id:
-      conn_type:
-      conn_host:
-      conn_schema:
-      conn_login:
-      conn_password:
-      conn_port:
-      conn_extra:
-        example_extra_field: example-value
-  pools:
-    - pool_name:
-      pool_slot:
-      pool_description:
   variables:
-    - variable_name:
-      variable_value:
+    - variable_name: easy_factor
+      variable_value: 2
+    - variable_name: medium_factor
+      variable_value: 4
+    - variable_name: hard_factor
+      variable_value: 8
+

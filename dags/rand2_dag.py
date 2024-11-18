@@ -15,11 +15,11 @@ def rand2_dag():
     @task(
         queue="hard"
     )
-    def very_hard_computations(batch):
+    def hard_computations(batch, factor):
         print(f"Computing batch [{batch}]")
-        result = compute_factor(factor=500)
+        result = compute_factor(factor=int(factor))
         print(result)
 
-    very_hard_computations.expand(batch=batches)
+    hard_computations.partial(factor="{{ var.value.hard_factor }}").expand(batch=batches)
 
 rand2_dag()

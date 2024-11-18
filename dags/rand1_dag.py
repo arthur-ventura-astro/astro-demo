@@ -15,11 +15,11 @@ def rand1_dag():
     @task(
         queue="medium"
     )
-    def medium_computations(batch):
+    def medium_computations(batch, factor):
         print(f"Computing batch [{batch}]")
-        result = compute_factor()
+        result = compute_factor(int(factor))
         print(result)
 
-    medium_computations.expand(batch=batches)
+    medium_computations.partial(factor="{{ var.value.medium_factor }}").expand(batch=batches)
 
 rand1_dag()
